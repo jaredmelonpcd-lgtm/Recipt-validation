@@ -66,10 +66,11 @@
             overflow: hidden;
         }
 
-        .logo-container svg {
+        .logo-container img {
             width: 100%;
             height: 100%;
             display: block;
+            object-fit: cover;
         }
 
         .header h1 {
@@ -180,41 +181,7 @@
     <!-- Header -->
     <div class="header">
         <div class="logo-container">
-            <!-- Inline SVG Implementation of the uploaded file logo -->
-            <svg xmlns="http://w3.org" viewBox="0 0 300 300">
-                <!-- Base Outer Ring -->
-                <circle cx="150" cy="150" r="140" fill="#0b72b9"/>
-                <circle cx="150" cy="150" r="115" fill="#ffffff"/>
-                
-                <!-- Central Striped Globe Effect (Approximated geometric paths) -->
-                <path d="M70,150 Q110,60 150,60 Q190,60 230,150 Q190,240 150,240 Q110,240 70,150 Z" fill="#f1f2f2"/>
-                <path d="M90,150 Q120,80 150,80 Q180,80 210,150 Q180,220 150,220 Q120,220 90,150 Z" fill="#e6e7e8"/>
-                
-                <!-- Inner Yellow Stylized Ribbon / Tape -->
-                <path d="M150,115 C170,115 210,130 210,170 L210,225 L190,225 L190,170 C190,145 165,135 150,135 Z" fill="#f8a51d"/>
-                
-                <!-- Center Core Circle and Ring -->
-                <circle cx="150" cy="150" r="35" fill="#db9e1a" stroke="#f8a51d" stroke-width="3"/>
-                <circle cx="150" cy="150" r="25" fill="#a6a6a6"/>
-                <circle cx="150" cy="150" r="20" fill="#777777"/>
-                <circle cx="148" cy="148" r="15" fill="#d1d3d4"/>
-                
-                <!-- Decorative Side Stars -->
-                <path d="M 23,150 L 26,153 L 32,153 L 27,156 L 29,162 L 23,158 L 17,162 L 19,156 L 14,153 L 20,153 Z" fill="#ffffff"/>
-                <path d="M 277,150 L 280,153 L 286,153 L 281,156 L 283,162 L 277,158 L 271,162 L 273,156 L 268,153 L 274,153 Z" fill="#ffffff"/>
-
-                <!-- Circular Text Top: የገቢዎች ሚኒስቴር -->
-                <path id="textPathTop" d="M 45,175 A 120,120 0 1,1 255,175" fill="none" />
-                <text font-family="'Segoe UI', sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">
-                    <textPath href="#textPathTop" startOffset="50%">የገቢዎች ሚኒስቴር</textPath>
-                </text>
-
-                <!-- Circular Text Bottom: Ministry of Revenues -->
-                <path id="textPathBottom" d="M 265,135 A 122,122 0 0,1 35,135" fill="none" />
-                <text font-family="'Segoe UI', sans-serif" font-size="21" font-weight="bold" fill="#ffffff" text-anchor="middle">
-                    <textPath href="#textPathBottom" startOffset="50%">Ministry of Revenues</textPath>
-                </text>
-            </svg>
+            <img src="Asset%201.svg" alt="Ethiopia Ministry of Revenue logo">
         </div>
         <h1>የኢትዮጵያ ገቢዎች ሚኒስቴር</h1>
         <p>Ethiopia Ministry of Revenue</p>
@@ -301,7 +268,7 @@
             <div class="label-group">
                 <span class="label-amharic">የማተሚያ ቤት ስም</span>
                 <span class="label-english">Printed By</span>
-</div>
+            </div>
             <div class="value-group">
                 <span class="value-text">BERHANENA SELAM PRINTING ENTERPRISE</span>
             </div>
