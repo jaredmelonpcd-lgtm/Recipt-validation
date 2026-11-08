@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Validation - Ministry of Revenues</title>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e52ba, #8e2de2);
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --success-bg: #e6f7ed;
+            --success-text: #198754;
+            --border-color: #eeeeee;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styling */
+        .header {
+            background: var(--primary-gradient);
+            padding: 30px 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* Container for the logo emblem */
+        .logo-container {
+            width: 85px;
+            height: 85px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffffff;
+            overflow: hidden;
+        }
+
+        .logo-container svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .header h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content Container */
+        .content {
+            padding: 25px;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(25, 135, 84, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Data Rows */
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .label-group {
+            display: flex;
+            flex-direction: column;
+            max-width: 45%;
+        }
+
+        .label-amharic {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .label-english {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .value-group {
+            text-align: right;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .value-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            word-break: break-word;
+        }
+
+        .unique-id {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+            font-weight: normal;
+        }
+
+        .value-highlight {
+            color: #1e52ba;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.75rem;
+            color: #999999;
+            background-color: #fafafa;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="logo-container">
+            <!-- Inline SVG Implementation of the uploaded file logo -->
+            <svg xmlns="http://w3.org" viewBox="0 0 300 300">
+                <!-- Base Outer Ring -->
+                <circle cx="150" cy="150" r="140" fill="#0b72b9"/>
+                <circle cx="150" cy="150" r="115" fill="#ffffff"/>
+                
+                <!-- Central Striped Globe Effect (Approximated geometric paths) -->
+                <path d="M70,150 Q110,60 150,60 Q190,60 230,150 Q190,240 150,240 Q110,240 70,150 Z" fill="#f1f2f2"/>
+                <path d="M90,150 Q120,80 150,80 Q180,80 210,150 Q180,220 150,220 Q120,220 90,150 Z" fill="#e6e7e8"/>
+                
+                <!-- Inner Yellow Stylized Ribbon / Tape -->
+                <path d="M150,115 C170,115 210,130 210,170 L210,225 L190,225 L190,170 C190,145 165,135 150,135 Z" fill="#f8a51d"/>
+                
+                <!-- Center Core Circle and Ring -->
+                <circle cx="150" cy="150" r="35" fill="#db9e1a" stroke="#f8a51d" stroke-width="3"/>
+                <circle cx="150" cy="150" r="25" fill="#a6a6a6"/>
+                <circle cx="150" cy="150" r="20" fill="#777777"/>
+                <circle cx="148" cy="148" r="15" fill="#d1d3d4"/>
+                
+                <!-- Decorative Side Stars -->
+                <path d="M 23,150 L 26,153 L 32,153 L 27,156 L 29,162 L 23,158 L 17,162 L 19,156 L 14,153 L 20,153 Z" fill="#ffffff"/>
+                <path d="M 277,150 L 280,153 L 286,153 L 281,156 L 283,162 L 277,158 L 271,162 L 273,156 L 268,153 L 274,153 Z" fill="#ffffff"/>
+
+                <!-- Circular Text Top: የገቢዎች ሚኒስቴር -->
+                <path id="textPathTop" d="M 45,175 A 120,120 0 1,1 255,175" fill="none" />
+                <text font-family="'Segoe UI', sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">
+                    <textPath href="#textPathTop" startOffset="50%">የገቢዎች ሚኒስቴር</textPath>
+                </text>
+
+                <!-- Circular Text Bottom: Ministry of Revenues -->
+                <path id="textPathBottom" d="M 265,135 A 122,122 0 0,1 35,135" fill="none" />
+                <text font-family="'Segoe UI', sans-serif" font-size="21" font-weight="bold" fill="#ffffff" text-anchor="middle">
+                    <textPath href="#textPathBottom" startOffset="50%">Ministry of Revenues</textPath>
+                </text>
+            </svg>
+        </div>
+        <h1>የኢትዮጵያ ገቢዎች ሚኒስቴር</h1>
+        <p>Ethiopia Ministry of Revenue</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="status-badge">
+            ✓ Valid Receipt
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የደረሰኝ መለያ ቁጥር</span>
+                <span class="label-english">Receipt No.</span>
+            </div>
+            <div class="value-group">
+                <span class="value-text value-highlight">7862</span>
+                <span class="unique-id">Unique ID: 124198424191</span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የግብር ከፋይ መለያ ቁጥር</span>
+                <span class="label-english">Taxpayer TIN</span>
+            </div>
+            <div class="value-group">
+                <span class="value-text">0095865440</span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የደረሰኝ ዓይነት</span>
+                <span class="label-english">Receipt Type</span>
+            </div>
+            <div class="value-group">
+                <span class="value-text">CASH SALES INVOICE/VAT</span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የግብር ከፋዩ ስም</span>
+                <span class="label-english">Taxpayer Name</span>
+            </div>
+            <div class="value-group">
+                <span class="value-text">እየሩሳሌም ጥላሁን ተስፋይ</span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የግብር ክፋዩ ታክስ ማዕከል</span>
+                <span class="label-english">Tax Center</span>
+            </div>
+            <div class="value-group">
+                <span class="value-text">TIGRAY-MEKELLE CITY ADMINSTRATION LTO</span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የቫት/VAT/መለያ ቁጥር</span>
+                <span class="label-english">VAT ID</span>
+            </div>
+            <div class="value-group">
+                <span class="value-text">1902913081108</span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የቫት/VAT/ቁጥር</span>
+                <span class="label-english">VAT No</span>
+            </div>
+            <div class="value-group">
+                <span class="value-text">3371753110</span>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="label-group">
+                <span class="label-amharic">የማተሚያ ቤት ስም</span>
+                <span class="label-english">Printed By</span>
+</div>
+            <div class="value-group">
+                <span class="value-text">BERHANENA SELAM PRINTING ENTERPRISE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2024 Ministry of Revenue. All rights reserved.
+    </div>
+</div>
+
+</body>
+</html>
